@@ -24,6 +24,11 @@ Run the generator from within the new folder:
 $ cd my-slush-foundation && slush foundation
 ```
 
+## Options
+
+- `--skip-install`
+  Skips the automatic execution of `bower` and `npm` after scaffolding has finished.
+  
 ## Getting To Know Slush
 
 Slush is a tool that uses Gulp for project scaffolding. To find out more about Slush, check out the [documentation](https://github.com/slushjs/slush).
