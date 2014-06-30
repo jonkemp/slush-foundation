@@ -33,6 +33,16 @@ gulp.task('lint', function () {
         .pipe(jshint.reporter('default'));
 });
 
+gulp.task('wiredep', function () {
+    var wiredep = require('wiredep').stream;
+
+    gulp.src('app/*.html')
+        .pipe(wiredep({
+            directory: 'app/bower_components'
+        }))
+        .pipe(gulp.dest('app'));
+});
+
 gulp.task('connect', function () {
     var connect = require('connect');
     var app = connect()
@@ -80,8 +90,24 @@ gulp.task('misc', function () {
         .pipe(gulp.dest(config.dist));
 });
 
-gulp.task('build', ['clean', 'lint'], function () {
-    gulp.start('images', 'fonts', 'misc');
+gulp.task('html', ['lint'], function () {
+    var htmlPath = config.html(),
+        minifycss = require('gulp-minify-css'),
+        useref = require('gulp-useref'),
+        gulpif = require('gulp-if'),
+        uglify = require('gulp-uglify');
+
+    return gulp.src(htmlPath)
+        .pipe(useref.assets())
+        .pipe(gulpif('*.js', uglify()))
+        .pipe(gulpif('*.css', minifycss()))
+        .pipe(useref.restore())
+        .pipe(useref())
+        .pipe(gulp.dest(config.dist));
+});
+
+gulp.task('build', ['clean'], function () {
+    gulp.start('images', 'fonts', 'misc', 'html');
 });
 
 gulp.task('default', ['build']);
