@@ -63,9 +63,24 @@ describe('slush-foundation', function() {
                     'app/robots.txt',
                     'app/index.html',
                     'app/css/foundation.css',
-                    'app/css/foundation.min.css',
-                    'app/css/normalize.css',
-                    'app/js/foundation.min.js'
+                    'app/js/foundation/foundation.js',
+                    'app/js/foundation/foundation.abide.js',
+                    'app/js/foundation/foundation.equalizer.js',
+                    'app/js/foundation/foundation.interchange.js',
+                    'app/js/foundation/foundation.dropdown.js',
+                    'app/js/foundation/foundation.accordion.js',
+                    'app/js/foundation/foundation.alert.js',
+                    'app/js/foundation/foundation.clearing.js',
+                    'app/js/foundation/jquery.cookie.js',
+                    'app/js/foundation/foundation.joyride.js',
+                    'app/js/foundation/foundation.magellan.js',
+                    'app/js/foundation/foundation.offcanvas.js',
+                    'app/js/foundation/foundation.orbit.js',
+                    'app/js/foundation/foundation.reveal.js',
+                    'app/js/foundation/foundation.slider.js',
+                    'app/js/foundation/foundation.tab.js',
+                    'app/js/foundation/foundation.tooltip.js',
+                    'app/js/foundation/foundation.topbar.js'
                 ]);
 
                 done();
