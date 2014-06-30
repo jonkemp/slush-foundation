@@ -29,11 +29,13 @@ function mockPrompt(answers) {
 describe('slush-foundation', function() {
     before(function () {
         process.chdir(__dirname);
+        process.argv.push('--skip-install');
     });
 
     describe('default generator', function () {
         beforeEach(function () {
             mockPrompt({
+                features: [],
                 moveon: true
             });
         });
@@ -49,10 +51,12 @@ describe('slush-foundation', function() {
         it('should create expected files', function (done) {
             gulp.start('default').once('stop', function () {
                 mockGulpDest.assertDestContains([
+                    '.bowerrc',
                     '.editorconfig',
                     '.gitattributes',
                     '.gitignore',
                     '.jshintrc',
+                    'bower.json',
                     'package.json',
                     'gulpfile.js',
                     'app/humans.txt',
