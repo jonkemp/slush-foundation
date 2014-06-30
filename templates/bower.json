@@ -2,8 +2,8 @@
   "name": "<%= appNameSlug %>",
   "private": true,
   "dependencies": {
-    "jquery": "~2.1.1",
-    "modernizr": "~2.8.2"
+    "jquery": "~2.1.1"<% if (includeModernizr) { %>,
+    "modernizr": "~2.8.2"<% } %>
   },
   "devDependencies": {}
 }

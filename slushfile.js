@@ -24,13 +24,26 @@ gulp.task('default', function (done) {
 
     inquirer.prompt([
         {
+            type: 'checkbox',
+            name: 'features',
+            message: 'Which other options would you like to include?',
+            choices: [{
+                name: 'Modernizr',
+                value: 'includeModernizr',
+                checked: true
+            }]
+        }, {
             type: 'confirm',
             name: 'moveon',
             message: 'Continue?'
         }
     ],
     function (answers) {
-        var appname;
+        var appname,
+            features = answers.features,
+            hasFeature = function (feat) {
+                return features.indexOf(feat) !== -1;
+            };
 
         if (!answers.moveon) {
             return done();
@@ -50,6 +63,7 @@ gulp.task('default', function (done) {
 
         answers.appname = appname.replace(/[^\w\s]+?/g, ' ');
         answers.appNameSlug = _s.slugify(answers.appname);
+        answers.includeModernizr = hasFeature('includeModernizr');
 
         gulp.src(__dirname + '/templates/**')
             .pipe(template(answers))
