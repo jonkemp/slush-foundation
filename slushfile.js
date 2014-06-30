@@ -28,6 +28,10 @@ gulp.task('default', function (done) {
             name: 'features',
             message: 'Which other options would you like to include?',
             choices: [{
+                name: 'Sass',
+                value: 'includeSass',
+                checked: true
+            }, {
                 name: 'Modernizr',
                 value: 'includeModernizr',
                 checked: true
@@ -63,9 +67,16 @@ gulp.task('default', function (done) {
 
         answers.appname = appname.replace(/[^\w\s]+?/g, ' ');
         answers.appNameSlug = _s.slugify(answers.appname);
+        answers.includeSass = hasFeature('includeSass');
         answers.includeModernizr = hasFeature('includeModernizr');
 
-        gulp.src(__dirname + '/templates/**')
+        var pattern = [__dirname + '/templates/**',  '!' + __dirname + '/templates/app/{scss,scss/**}'];
+
+        if (answers.includeSass) {
+            pattern = [__dirname + '/templates/**', '!' + __dirname + '/templates/app/{css,css/**}'];
+        }
+
+        gulp.src(pattern)
             .pipe(template(answers))
             .pipe(rename(function (file) {
                 if (file.basename[0] === '_') {
