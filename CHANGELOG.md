@@ -1,5 +1,16 @@
 # slush-foundation changelog
 
+# 0.3.0
+
+- Remove minified Foundation lib files.
+- Remove normalize.css.
+- Add all non-minified Foundation JS files to index.html.
+- Remove duplicate jquery.cookie.js.
+- Update tests.
+- Add option to use Sass.
+- Add gulp task to compile scss files.
+- Bug fix: gulp-rename should not rename .scss files that start with '_'.
+
 # 0.2.0
 
 - Install Modernizr and jQuery via Bower.
