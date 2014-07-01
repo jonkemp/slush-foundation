@@ -2,6 +2,22 @@
 
 > Slush generator for Zurb Foundation 5
 
+## Features
+
+### Includes:
+* [Zurb Foundation 5](http://foundation.zurb.com/)
+* jQuery
+* Modernizr
+
+### What you can do:
+* Watch and compile Sass files automatically
+* Automatically wire-up dependencies installed with Bower
+* Start a server to preview your code with LiveReload
+* Automatically lint your scripts
+* Concatenate and minify CSS and JavaScript files
+
+For more information on what this generator can do for you, take a look at the [gulp plugins](https://github.com/jonkemp/slush-foundation/blob/master/templates/package.json) used in the `package.json`. Please see the [gulpfile.js](https://github.com/jonkemp/slush-foundation/blob/master/templates/gulpfile.js) for up to date information on what is supported.
+
 ## Getting Started
 
 Install `slush-foundation` globally:
