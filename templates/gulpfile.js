@@ -32,6 +32,16 @@ gulp.task('lint', function () {
         .pipe(jshint())
         .pipe(jshint.reporter('default'));
 });
+<% if (includeSass) { %>
+gulp.task('styles', function () {
+    var sass = require('gulp-sass');
+
+    return gulp.src('app/scss/**/*.scss')
+        .pipe(sass({
+            outputStyle: 'expanded'
+        }))
+        .pipe(gulp.dest('app/css'));
+});<% } %>
 
 gulp.task('wiredep', function () {
     var wiredep = require('wiredep').stream;
@@ -57,7 +67,7 @@ gulp.task('connect', function () {
         });
 });
 
-gulp.task('server', ['connect'], function () {
+gulp.task('server', [<% if (includeSass) { %>'styles', <% } %>'connect'], function () {
     var jsPath = config.scripts(),
         cssPath = config.styles(),
         htmlPath = config.html(),
@@ -65,10 +75,14 @@ gulp.task('server', ['connect'], function () {
         server = livereload();
 
     require('opn')('http://localhost:' + config.port);
+    <% if (includeSass) { %>
+    gulp.watch(cssPath + '/**/*.scss', ['styles']);<% } %>
 
-    gulp.watch([cssPath + '/**/*.css', jsPath, htmlPath]).on('change', function (file) {
+    gulp.watch([cssPath + '/**/*.<%= includeSass ? 'scss' : 'css' %>', jsPath, htmlPath]).on('change', function (file) {
         server.changed(file.path);
     });
+
+    gulp.watch('bower.json', ['wiredep']);
 });
 
 gulp.task('images', function () {
@@ -90,7 +104,7 @@ gulp.task('misc', function () {
         .pipe(gulp.dest(config.dist));
 });
 
-gulp.task('html', ['lint'], function () {
+gulp.task('html', ['lint'<% if (includeSass) { %>, 'styles'<% } %>], function () {
     var htmlPath = config.html(),
         minifycss = require('gulp-minify-css'),
         useref = require('gulp-useref'),
