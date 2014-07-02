@@ -5,7 +5,16 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%= appNameSlug %></title>
+
+    <!-- build:css styles/vendor.css -->
     <link rel="stylesheet" href="css/foundation.css" />
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+    
+    <!-- build:css styles/main.css -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- endbuild -->
     <% if (includeModernizr) { %>
     <!-- build:js scripts/vendor/modernizr.js -->
     <script src="bower_components/modernizr/modernizr.js"></script>
