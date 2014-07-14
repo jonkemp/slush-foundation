@@ -1,5 +1,12 @@
 # slush-foundation changelog
 
+# 0.4.0
+
+- Add main.(css|scss) template.
+- Wire main.css to index.html.
+- Add build blocks for main.css and vendor.css.
+- New gulpfile.js.
+
 # 0.3.0
 
 - Remove minified Foundation lib files.
