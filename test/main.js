@@ -62,25 +62,7 @@ describe('slush-foundation', function() {
                     'app/humans.txt',
                     'app/robots.txt',
                     'app/index.html',
-                    'app/css/foundation.css',
-                    'app/js/foundation/foundation.js',
-                    'app/js/foundation/foundation.abide.js',
-                    'app/js/foundation/foundation.equalizer.js',
-                    'app/js/foundation/foundation.interchange.js',
-                    'app/js/foundation/foundation.dropdown.js',
-                    'app/js/foundation/foundation.accordion.js',
-                    'app/js/foundation/foundation.alert.js',
-                    'app/js/foundation/foundation.clearing.js',
-                    'app/js/foundation/jquery.cookie.js',
-                    'app/js/foundation/foundation.joyride.js',
-                    'app/js/foundation/foundation.magellan.js',
-                    'app/js/foundation/foundation.offcanvas.js',
-                    'app/js/foundation/foundation.orbit.js',
-                    'app/js/foundation/foundation.reveal.js',
-                    'app/js/foundation/foundation.slider.js',
-                    'app/js/foundation/foundation.tab.js',
-                    'app/js/foundation/foundation.tooltip.js',
-                    'app/js/foundation/foundation.topbar.js'
+                    'app/css/main.css'
                 ]);
 
                 done();
@@ -95,50 +77,8 @@ describe('slush-foundation', function() {
                 moveon: true
             });
             gulp.start('default').once('stop', function () {
-                mockGulpDest.assertDestNotContains('app/css/foundation.css');
-                mockGulpDest.assertDestContains('app/scss/foundation.scss');
-                mockGulpDest.assertDestContains('app/scss/foundation/_functions.scss');
-                mockGulpDest.assertDestContains('app/scss/foundation/_settings.scss');
-                mockGulpDest.assertDestContains('app/scss/foundation/components/_accordion.scss');
-                mockGulpDest.assertDestContains('app/scss/foundation/components/_alert-boxes.scss');
-                mockGulpDest.assertDestContains('app/scss/foundation/components/_block-grid.scss');
-                mockGulpDest.assertDestContains('app/scss/foundation/components/_breadcrumbs.scss');
-                mockGulpDest.assertDestContains('app/scss/foundation/components/_button-groups.scss');
-                mockGulpDest.assertDestContains('app/scss/foundation/components/_buttons.scss');
-                mockGulpDest.assertDestContains('app/scss/foundation/components/_clearing.scss');
-                mockGulpDest.assertDestContains('app/scss/foundation/components/_dropdown.scss');
-                mockGulpDest.assertDestContains('app/scss/foundation/components/_dropdown-buttons.scss');
-                mockGulpDest.assertDestContains('app/scss/foundation/components/_flex-video.scss');
-                mockGulpDest.assertDestContains('app/scss/foundation/components/_forms.scss');
-                mockGulpDest.assertDestContains('app/scss/foundation/components/_global.scss');
-                mockGulpDest.assertDestContains('app/scss/foundation/components/_grid.scss');
-                mockGulpDest.assertDestContains('app/scss/foundation/components/_icon-bar.scss');
-                mockGulpDest.assertDestContains('app/scss/foundation/components/_inline-lists.scss');
-                mockGulpDest.assertDestContains('app/scss/foundation/components/_joyride.scss');
-                mockGulpDest.assertDestContains('app/scss/foundation/components/_keystrokes.scss');
-                mockGulpDest.assertDestContains('app/scss/foundation/components/_labels.scss');
-                mockGulpDest.assertDestContains('app/scss/foundation/components/_magellan.scss');
-                mockGulpDest.assertDestContains('app/scss/foundation/components/_offcanvas.scss');
-                mockGulpDest.assertDestContains('app/scss/foundation/components/_orbit.scss');
-                mockGulpDest.assertDestContains('app/scss/foundation/components/_pagination.scss');
-                mockGulpDest.assertDestContains('app/scss/foundation/components/_panels.scss');
-                mockGulpDest.assertDestContains('app/scss/foundation/components/_pricing-tables.scss');
-                mockGulpDest.assertDestContains('app/scss/foundation/components/_progress-bars.scss');
-                mockGulpDest.assertDestContains('app/scss/foundation/components/_range-slider.scss');
-                mockGulpDest.assertDestContains('app/scss/foundation/components/_reveal.scss');
-                mockGulpDest.assertDestContains('app/scss/foundation/components/_reveal-new.scss');
-                mockGulpDest.assertDestContains('app/scss/foundation/components/_side-nav.scss');
-                mockGulpDest.assertDestContains('app/scss/foundation/components/_split-buttons.scss');
-                mockGulpDest.assertDestContains('app/scss/foundation/components/_sub-nav.scss');
-                mockGulpDest.assertDestContains('app/scss/foundation/components/_switches.scss');
-                mockGulpDest.assertDestContains('app/scss/foundation/components/_tables.scss');
-                mockGulpDest.assertDestContains('app/scss/foundation/components/_tabs.scss');
-                mockGulpDest.assertDestContains('app/scss/foundation/components/_thumbs.scss');
-                mockGulpDest.assertDestContains('app/scss/foundation/components/_toolbar.scss');
-                mockGulpDest.assertDestContains('app/scss/foundation/components/_tooltips.scss');
-                mockGulpDest.assertDestContains('app/scss/foundation/components/_top-bar.scss');
-                mockGulpDest.assertDestContains('app/scss/foundation/components/_type.scss');
-                mockGulpDest.assertDestContains('app/scss/foundation/components/_visibility.scss');
+                mockGulpDest.assertDestNotContains('app/css/main.css');
+                mockGulpDest.assertDestContains('app/scss/main.scss');
                 done();
             });
         });
