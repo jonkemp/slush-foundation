@@ -11,7 +11,6 @@
 
 ### What you can do:
 * Watch and compile Sass files automatically
-* Automatically wire-up dependencies installed with Bower
 * Start a server to preview your code with LiveReload
 * Automatically lint your scripts
 * Concatenate and minify CSS and JavaScript files
