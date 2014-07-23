@@ -96,7 +96,6 @@ gulp.task('serve', ['connect'<% if (includeSass) { %>, 'styles'<% } %>], functio
     ]).on('change', livereload.changed);
     <% if (includeSass) { %>
     gulp.watch('app/scss/**/*.scss', ['styles']);<% } %>
-    gulp.watch('bower.json', ['wiredep']);
 });
 
 gulp.task('build', ['lint', 'html', 'images', 'fonts', 'misc']);
