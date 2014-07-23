@@ -17,8 +17,7 @@
     "gulp-uglify": "^0.3.1",
     "gulp-useref": "^0.5.0",
     "opn": "^0.1.2",
-    "rimraf": "^2.2.8",
-    "wiredep": "^1.8.1"
+    "rimraf": "^2.2.8"
   },
   "engines": {
     "node": ">=0.10.0"

@@ -66,16 +66,6 @@ gulp.task('html', ['lint'<% if (includeSass) { %>, 'styles'<% } %>], function ()
         .pipe(gulp.dest('dist'));
 });
 
-gulp.task('wiredep', function () {
-    var wiredep = require('wiredep').stream;
-
-    gulp.src('app/*.html')
-        .pipe(wiredep({
-            directory: 'app/bower_components'
-        }))
-        .pipe(gulp.dest('app'));
-});
-
 gulp.task('connect', function () {
     var connect = require('connect');
     var app = connect()
