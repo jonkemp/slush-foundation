@@ -1,5 +1,11 @@
 # slush-foundation changelog
 
+# 1.0.0
+
+- Install Foundation files with bower.
+- New gulpfile.js.
+- Update dependencies.
+
 # 0.4.0
 
 - Add main.(css|scss) template.
