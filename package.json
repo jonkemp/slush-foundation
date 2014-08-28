@@ -1,7 +1,7 @@
 {
   "name": "slush-foundation",
   "description": "Slush generator for Zurb Foundation 5",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "homepage": "https://github.com/jonkemp/slush-foundation",
   "author": {
     "name": "Jonathan Kemp",
