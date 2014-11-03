@@ -20,7 +20,7 @@ gulp.task('styles', function () {
 
     return gulp.src('app/scss/**/*.scss')
         .pipe(sass({
-            outputStyle: 'expanded'
+            precision: 10
         }))
         .pipe(cssbeautify())
         .pipe(gulp.dest('app/css'));

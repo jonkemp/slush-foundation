@@ -2,7 +2,7 @@
   "name": "<%= appNameSlug %>",
   "private": true,
   "dependencies": {
-    "foundation": "~5.3.1",
+    "foundation": "~5.4.7",
     "jquery": "~2.1.1"<% if (includeModernizr) { %>,
     "modernizr": "~2.8.2"<% } %>
   },
